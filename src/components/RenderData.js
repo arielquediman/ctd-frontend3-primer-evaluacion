@@ -15,9 +15,9 @@ class RenderData extends React.Component {
 }
 
 
-handlerClic = (e) => {
-    const option = e.target.id;
-    console.log(e.target.id);
+handlerClic = (event) => {
+    const option = event.target.id;
+    console.log(event.target.id);
     if (this.state.count > 5) {
         swal({
             title:"Fin.",
@@ -56,8 +56,16 @@ handlerClic = (e) => {
     }
 }
 
+handlerOnDelete = () => {
+    this.setState({
+        count: 0,
+        prevOption: "",
+    })
+    allOptions.splice(0,4)
+}
+
 componentDidUpdate(prevState) {
-    if (prevState.prevOption !== this.state.prevOption) { 
+    if ((prevState.prevOption !== this.state.prevOption) && (this.state.prevOption !== "")) { 
         allOptions.push(this.state.prevOption)
     }
     console.log(allOptions)
@@ -70,6 +78,7 @@ componentDidUpdate(prevState) {
         <div className="opciones">
             <Button handlerClic={this.handlerClic} opcion={this.props.data[this.state.count].opciones.a} name="A"/>
             <Button handlerClic={this.handlerClic} opcion={this.props.data[this.state.count].opciones.b} name="B"/>
+            <button className="botones" onClick={this.handlerOnDelete}>Reset</button>
         </div>
         <OptionChosen prevOption = {this.state.prevOption} list={allOptions} />
         </>

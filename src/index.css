@@ -37,6 +37,10 @@ body{
   font-size:15px;
 }
 
+p{
+  font-weight:bold;
+}
+
 .opcion {
   display: flex;
   gap: 15px;
