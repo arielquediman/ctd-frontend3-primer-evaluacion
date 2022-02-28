@@ -1,6 +1,7 @@
 # Entregable de la Materia Front End III para C.T.D
 La aplicación se trata de un "Elige tu propia aventura", es una página estática creada con React, usando Components Class.
 - Historia otorgada por el equipo de Frontend 3.
+- [Repositorio de la actividad](https://github.com/Ivanszs/ctd-frontend3-primer-evaluacion).
 
 Temas vistos y aplicados en el proyecto:
 - Utilización de CRA para crear una aplicación.
